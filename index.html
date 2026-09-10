@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khairy Eid Aly | خيري عيد علي - Android Developer</title>
     
-    <!-- خط تجوال و Roboto لمظهر عصري واحترافي -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- كود البيانات المنظمة لجوجل (Schema.org) -->
+    <!-- كود البيانات المنظمة لمحركات البحث (Schema.org JSON-LD) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -18,13 +17,12 @@
         "name": "Khairy Eid Aly",
         "alternateName": ["خيري عيد علي"],
         "jobTitle": "Android Application Developer",
-        "image": "profile.jpg",
+        "url": "https://khairyeldelar.github.io/Khairyeldelar/",
         "sameAs": [
-            "https://play.google.com/store/apps/developer?id=Khairy+Eid+Aly",
-            "رابط_مدونة_بلوجر_الخاصة_بك",
+            "https://play.google.com/store/apps/dev?id=5806307670414876238",
             "https://github.com/Khairyeldelar"
         ],
-        "knowsAbout": ["Android Development", "Mobile Applications", "Kotlin", "Java", "Google Play"]
+        "knowsAbout": ["Android Development", "Mobile Applications", "Google Play", "Kotlin", "Java"]
     }
     </script>
     
@@ -60,7 +58,6 @@
             padding: 50px 20px 80px;
         }
 
-        /* Hero Profile Section */
         .hero {
             background: var(--card-bg);
             border: 1px solid var(--border);
@@ -113,7 +110,6 @@
             font-weight: 800;
             color: #fff;
             margin-bottom: 5px;
-            letter-spacing: -0.5px;
         }
 
         .hero .ar-name {
@@ -181,7 +177,6 @@
             border-color: var(--accent);
         }
 
-        /* Section Titles */
         .section-header {
             display: flex;
             align-items: center;
@@ -200,7 +195,6 @@
             color: #fff;
         }
 
-        /* Apps Grid */
         .apps-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -243,7 +237,7 @@
 
         .app-title h3 {
             color: #fff;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             margin-bottom: 2px;
         }
 
@@ -263,7 +257,7 @@
             background: rgba(56, 189, 248, 0.08);
             color: var(--accent);
             border: 1px solid rgba(56, 189, 248, 0.2);
-            padding: 10px 18px;
+            padding: 11px 18px;
             border-radius: 10px;
             text-decoration: none;
             text-align: center;
@@ -277,7 +271,7 @@
             color: #0b0f19;
         }
 
-        /* Gallery / Photo Album */
+        /* Gallery */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -323,7 +317,6 @@
             opacity: 1;
         }
 
-        /* Modal Lightbox for Images */
         #lightbox {
             position: fixed;
             top: 0;
@@ -348,7 +341,6 @@
             display: flex;
         }
 
-        /* Platforms & Social */
         .channels {
             display: flex;
             flex-wrap: wrap;
@@ -375,7 +367,6 @@
             transform: translateY(-2px);
         }
 
-        /* Footer */
         footer {
             text-align: center;
             margin-top: 60px;
@@ -390,138 +381,129 @@
 
     <div class="container">
 
-        <!-- البطاقة التعريفية الرئيسية (Hero Profile) -->
         <section class="hero">
             <div class="avatar-wrapper">
-                <!-- استبدل profile.jpg باسم صورتك الشخصية -->
                 <img src="profile.jpg" alt="Khairy Eid Aly" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=Khairy+Eid&background=2563eb&color=fff&size=200'">
-                <div class="badge-verified" title="موثق">✓</div>
+                <div class="badge-verified" title="Verified Developer">✓</div>
             </div>
 
             <h1>Khairy Eid Aly</h1>
             <div class="ar-name">خيري عيد علي</div>
             
-            <div class="title-tag">مطور تطبيقات أندرويد • Android Application Developer</div>
+            <div class="title-tag">Android Application Developer • مطور تطبيقات أندرويد</div>
 
             <p class="desc">
-                مطور برمجيات وتطبيقات هواتف ذكية بنظام أندرويد، متخصص في بناء الحلول الرقمية، وتصميم واجهات المستخدم الحديثة، ونشر وإدارة التطبيقات عبر منصة Google Play.
+                مطور تطبيقات ومبرمج برمجيات، أعمل على بناء ونشر تطبيقات الهواتف الذكية بنظام أندرويد عبر متجر Google Play بأداء عالي وتجربة مستخدم مخصصة.
             </p>
 
             <div class="quick-actions">
-                <a href="#apps" class="action-btn">📲 تصفح التطبيقات</a>
+                <a href="#apps" class="action-btn">📱 تصفح التطبيقات</a>
                 <a href="#gallery" class="action-btn secondary">🖼️ ألبوم الصور</a>
             </div>
         </section>
 
-        <!-- قسم تطبيقات Google Play -->
+        <!-- قسم التطبيقات الثلاثة المنشورة -->
         <div class="section-header" id="apps">
-            <h2>📱 التطبيقات المنشورة (Google Play)</h2>
+            <h2>📱 التطبيقات المنشورة على Google Play</h2>
         </div>
 
         <div class="apps-grid">
-            <!-- التطبيق الأول -->
+            <!-- 1. Can You Survive Mobile -->
             <div class="app-card">
                 <div>
                     <div class="app-top">
-                        <img src="app1-icon.png" alt="App 1" class="app-icon" onerror="this.src='https://via.placeholder.com/60/1e293b/38bdf8?text=App+1'">
+                        <img src="https://play-lh.googleusercontent.com/canyousurvive" alt="Can You Survive Mobile" class="app-icon" onerror="this.src='https://via.placeholder.com/60/1e293b/38bdf8?text=Survive'">
                         <div class="app-title">
-                            <h3>التطبيق الأول</h3>
-                            <span>Android App</span>
+                            <h3>Can You Survive Mobile</h3>
+                            <span>Action / Survival Game</span>
                         </div>
                     </div>
-                    <p>وصف مختصر ومميز لوظيفة التطبيق ومميزاته التي يقدمها للمستخدمين على متجر بلاي.</p>
+                    <p>لعبة تحدي البقاء وتجربة مشوقة صممت لتوفير تجربة لعب تفاعلية وحماسية على هواتف الأندرويد.</p>
                 </div>
-                <a href="#" target="_blank" class="app-link">تحميل من Google Play</a>
+                <a href="https://play.google.com/store/apps/details?id=com.app.canyousurvivemobile" target="_blank" class="app-link">تحميل من Google Play ↗</a>
             </div>
 
-            <!-- التطبيق الثاني -->
+            <!-- 2. رفيق المسلم (Rafiq Al Muslim) -->
             <div class="app-card">
                 <div>
                     <div class="app-top">
-                        <img src="app2-icon.png" alt="App 2" class="app-icon" onerror="this.src='https://via.placeholder.com/60/1e293b/38bdf8?text=App+2'">
+                        <img src="https://play-lh.googleusercontent.com/rafiqalmuslim" alt="رفيق المسلم" class="app-icon" onerror="this.src='https://via.placeholder.com/60/1e293b/38bdf8?text=رفيق'">
                         <div class="app-title">
-                            <h3>التطبيق الثاني</h3>
-                            <span>Android App</span>
+                            <h3>رفيق المسلم (Rafiq Al Muslim)</h3>
+                            <span>تطبيق إسلامي شامل</span>
                         </div>
                     </div>
-                    <p>وصف مختصر ومميز لوظيفة التطبيق ومميزاته التي يقدمها للمستخدمين على متجر بلاي.</p>
+                    <p>تطبيق إسلامي يومي يضم الأذكار، الأدعية، والخدمات الدينية الضرورية لكل مسلم بتصميم مريح وتصفح يسير.</p>
                 </div>
-                <a href="#" target="_blank" class="app-link">تحميل من Google Play</a>
+                <a href="https://play.google.com/store/apps/details?id=com.app.rafiqalmuslim" target="_blank" class="app-link">تحميل من Google Play ↗</a>
             </div>
 
-            <!-- التطبيق الثالث -->
+            <!-- 3. دليل تنبدي (Tanbadi Directory) -->
             <div class="app-card">
                 <div>
                     <div class="app-top">
-                        <img src="app3-icon.png" alt="App 3" class="app-icon" onerror="this.src='https://via.placeholder.com/60/1e293b/38bdf8?text=App+3'">
+                        <img src="https://play-lh.googleusercontent.com/tanbadi" alt="دليل تنبدي" class="app-icon" onerror="this.src='https://via.placeholder.com/60/1e293b/38bdf8?text=دليل'">
                         <div class="app-title">
-                            <h3>التطبيق الثالث</h3>
-                            <span>Android App</span>
+                            <h3>دليل تنبدي (Tanbadi Directory)</h3>
+                            <span>خدمي / دليل محلي</span>
                         </div>
                     </div>
-                    <p>وصف مختصر ومميز لوظيفة التطبيق ومميزاته التي يقدمها للمستخدمين على متجر بلاي.</p>
+                    <p>دليل خدمي ودليلي شامل لتسهيل الوصول للأرقام والخدمات الحيوية والأنشطة بكل سهولة وسرعة.</p>
                 </div>
-                <a href="#" target="_blank" class="app-link">تحميل من Google Play</a>
+                <a href="https://play.google.com/store/apps/details?id=com.aistudio.tanbadidirectory.wbqzj" target="_blank" class="app-link">تحميل من Google Play ↗</a>
             </div>
         </div>
 
-        <!-- ألبوم الصور -->
+        <!-- معرض الصور -->
         <div class="section-header" id="gallery">
             <h2>🖼️ ألبوم الصور (Gallery)</h2>
         </div>
 
         <div class="gallery-grid">
-            <!-- صورة 1 -->
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="photo1.jpg" alt="صورة 1" onerror="this.src='https://via.placeholder.com/400/1e293b/38bdf8?text=Photo+1'">
-                <div class="gallery-caption">صورة شخصية / بيئة العمل</div>
+                <img src="photo1.jpg" alt="Work Environment" onerror="this.src='https://via.placeholder.com/400/1e293b/38bdf8?text=Workspace'">
+                <div class="gallery-caption">بيئة البرمجة والتطوير</div>
             </div>
 
-            <!-- صورة 2 -->
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="photo2.jpg" alt="صورة 2" onerror="this.src='https://via.placeholder.com/400/1e293b/38bdf8?text=Photo+2'">
-                <div class="gallery-caption">واجهات البرمجة والتطوير</div>
+                <img src="photo2.jpg" alt="Mobile Development" onerror="this.src='https://via.placeholder.com/400/1e293b/38bdf8?text=Mobile+Dev'">
+                <div class="gallery-caption">تطوير تطبيقات الأندرويد</div>
             </div>
 
-            <!-- صورة 3 -->
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="photo3.jpg" alt="صورة 3" onerror="this.src='https://via.placeholder.com/400/1e293b/38bdf8?text=Photo+3'">
-                <div class="gallery-caption">لقطة من أحد التطبيقات</div>
+                <img src="photo3.jpg" alt="Android UI/UX" onerror="this.src='https://via.placeholder.com/400/1e293b/38bdf8?text=UI+Design'">
+                <div class="gallery-caption">تصميم واجهات المستخدم</div>
             </div>
 
-            <!-- صورة 4 -->
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="photo4.jpg" alt="صورة 4" onerror="this.src='https://via.placeholder.com/400/1e293b/38bdf8?text=Photo+4'">
-                <div class="gallery-caption">أرشيف المشاريع والفعاليات</div>
+                <img src="photo4.jpg" alt="Google Play Projects" onerror="this.src='https://via.placeholder.com/400/1e293b/38bdf8?text=Projects'">
+                <div class="gallery-caption">المشاريع المنشورة</div>
             </div>
         </div>
 
-        <!-- القنوات والمنصات الرسمية -->
+        <!-- المنصات الرسمية -->
         <div class="section-header">
             <h2>🔗 المنصات الرسمية</h2>
         </div>
 
         <div class="channels">
-            <a href="https://play.google.com/store/apps/developer?id=Khairy+Eid+Aly" target="_blank" class="channel-btn">
-                <span>🚀 صفحة المطور (Google Play)</span>
-            </a>
-            <a href="رابط_مدونة_بلوجر_الخاصة_بك" target="_blank" class="channel-btn">
-                <span>📝 المدونة الرسمية (Blogger)</span>
+            <a href="https://play.google.com/store/apps/dev?id=5806307670414876238" target="_blank" class="channel-btn">
+                <span>🚀 صفحة المطور (Google Play Console)</span>
             </a>
             <a href="https://github.com/Khairyeldelar" target="_blank" class="channel-btn">
-                <span>💻 مستودعات المشاريع (GitHub)</span>
+                <span>💻 حساب المشاريع (GitHub)</span>
             </a>
         </div>
 
         <footer>
-            <p>© Khairy Eid Aly (خيري عيد علي) - جميع الحقوق محفوظة</p>
+            <p>© Khairy Eid Aly (خيري عيد علي) - All Rights Reserved</p>
         </footer>
 
     </div>
 
-    <!-- نافذة تكبير الصور (Lightbox) -->
+    <!-- نافذة تكبير الصور -->
     <div id="lightbox" onclick="closeLightbox()">
-        <img id="lightbox-img" src="" alt="Full size preview">
+        <img id="lightbox-img" src="" alt="Full Preview">
     </div>
 
     <script>
