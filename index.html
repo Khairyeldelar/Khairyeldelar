@@ -15,12 +15,15 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Khairy Eid Aly",
-        "alternateName": ["خيري عيد علي"],
+        "alternateName": ["خيري عيد علي", "Khairy Eldelar"],
         "jobTitle": "Android Application Developer",
         "url": "https://khairyeldelar.github.io/Khairyeldelar/",
         "sameAs": [
             "https://play.google.com/store/apps/dev?id=5806307670414876238",
-            "https://github.com/Khairyeldelar"
+            "https://khairyeid.blogspot.com/",
+            "https://www.facebook.com/khairy.eldelar",
+            "https://www.instagram.com/khairy.eldelar",
+            "https://www.youtube.com/@khairyeldelar"
         ],
         "knowsAbout": ["Android Development", "Mobile Applications", "Google Play", "Kotlin", "Java"]
     }
@@ -119,7 +122,7 @@
             margin-bottom: 12px;
         }
 
-        .hero .title-tag {
+        .title-tag {
             display: inline-block;
             background: rgba(56, 189, 248, 0.1);
             color: var(--accent);
@@ -341,9 +344,10 @@
             display: flex;
         }
 
+        /* Platforms & Social */
         .channels {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 15px;
         }
 
@@ -351,20 +355,22 @@
             background: var(--card-bg);
             border: 1px solid var(--border);
             color: var(--text);
-            padding: 14px 24px;
+            padding: 15px 20px;
             border-radius: 14px;
             text-decoration: none;
             font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             transition: all 0.2s ease;
+            backdrop-filter: blur(10px);
         }
 
         .channel-btn:hover {
             border-color: var(--accent);
             color: var(--accent);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.25);
         }
 
         footer {
@@ -398,11 +404,11 @@
 
             <div class="quick-actions">
                 <a href="#apps" class="action-btn">📱 تصفح التطبيقات</a>
-                <a href="#gallery" class="action-btn secondary">🖼️ ألبوم الصور</a>
+                <a href="#links" class="action-btn secondary">🌐 المنصات والحسابات</a>
             </div>
         </section>
 
-        <!-- قسم التطبيقات الثلاثة المنشورة -->
+        <!-- تطبيقات Google Play -->
         <div class="section-header" id="apps">
             <h2>📱 التطبيقات المنشورة على Google Play</h2>
         </div>
@@ -448,13 +454,13 @@
                             <span>خدمي / دليل محلي</span>
                         </div>
                     </div>
-                    <p>دليل خدمي ودليلي شامل لتسهيل الوصول للأرقام والخدمات الحيوية والأنشطة بكل سهولة وسرعة.</p>
+                    <p>دليل خدمي شامل لتسهيل الوصول للأرقام والخدمات الحيوية والأنشطة بكل سهولة وسرعة.</p>
                 </div>
                 <a href="https://play.google.com/store/apps/details?id=com.aistudio.tanbadidirectory.wbqzj" target="_blank" class="app-link">تحميل من Google Play ↗</a>
             </div>
         </div>
 
-        <!-- معرض الصور -->
+        <!-- ألبوم الصور -->
         <div class="section-header" id="gallery">
             <h2>🖼️ ألبوم الصور (Gallery)</h2>
         </div>
@@ -477,26 +483,35 @@
 
             <div class="gallery-item" onclick="openLightbox(this)">
                 <img src="photo4.jpg" alt="Google Play Projects" onerror="this.src='https://via.placeholder.com/400/1e293b/38bdf8?text=Projects'">
-                <div class="gallery-caption">المشاريع المنشورة</div>
+                <div class="gallery-caption">المشاريع البرمجية</div>
             </div>
         </div>
 
-        <!-- المنصات الرسمية -->
-        <div class="section-header">
-            <h2>🔗 المنصات الرسمية</h2>
+        <!-- المنصات الرسمية والتواصل -->
+        <div class="section-header" id="links">
+            <h2>🌐 المنصات والحسابات الرسمية</h2>
         </div>
 
         <div class="channels">
             <a href="https://play.google.com/store/apps/dev?id=5806307670414876238" target="_blank" class="channel-btn">
-                <span>🚀 صفحة المطور (Google Play Console)</span>
+                <span>🚀 صفحة المطور (Google Play)</span>
             </a>
-            <a href="https://github.com/Khairyeldelar" target="_blank" class="channel-btn">
-                <span>💻 حساب المشاريع (GitHub)</span>
+            <a href="https://khairyeid.blogspot.com/" target="_blank" class="channel-btn">
+                <span>📝 المدونة الرسمية (Blogger)</span>
+            </a>
+            <a href="https://www.youtube.com/@khairyeldelar" target="_blank" class="channel-btn">
+                <span>▶️ قناة يوتيوب (YouTube)</span>
+            </a>
+            <a href="https://www.facebook.com/khairy.eldelar" target="_blank" class="channel-btn">
+                <span>📘 فيسبوك (Facebook)</span>
+            </a>
+            <a href="https://www.instagram.com/khairy.eldelar" target="_blank" class="channel-btn">
+                <span>📸 انستجرام (Instagram)</span>
             </a>
         </div>
 
         <footer>
-            <p>© Khairy Eid Aly (خيري عيد علي) - All Rights Reserved</p>
+            <p>© Khairy Eid Aly (خيري عيد علي) - جميع الحقوق محفوظة</p>
         </footer>
 
     </div>
