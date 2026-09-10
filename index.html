@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="Yd2_G82u5MuqDEcmuqrrmNBKrFVeQUpVwL9pHW9kDCM" />
     <title>Khairy Eid Aly | الموقع الرسمي</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -81,7 +82,6 @@
             margin: 0 auto;
         }
 
-        /* شريط التنقل العلوي */
         .top-nav {
             display: flex;
             align-items: center;
@@ -147,7 +147,6 @@
             margin-inline-start: 4px;
         }
 
-        /* البطاقة التعريفية (Hero) */
         .profile-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -209,7 +208,6 @@
             background: #e2e8f0;
         }
 
-        /* أزرار الحسابات (Pills) */
         .social-pills {
             display: flex;
             flex-wrap: wrap;
@@ -236,7 +234,6 @@
             transform: translateY(-1px);
         }
 
-        /* بطاقة الترحيب */
         .welcome-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -260,7 +257,6 @@
             font-size: 1.02rem;
         }
 
-        /* شريط العناوين */
         .section-bar {
             display: flex;
             align-items: center;
@@ -281,7 +277,6 @@
             text-decoration: none;
         }
 
-        /* شبكة التطبيقات */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -352,7 +347,6 @@
             border-color: var(--primary);
         }
 
-        /* معرض الصور */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -378,7 +372,6 @@
             object-fit: cover;
         }
 
-        /* Lightbox */
         #lightbox {
             position: fixed;
             top: 0;
@@ -425,7 +418,6 @@
 
     <div class="container">
 
-        <!-- شريط التنقل مع أزرار التحكم -->
         <nav class="top-nav">
             <a href="#" class="nav-brand">
                 <span class="verified-icon">
@@ -437,11 +429,9 @@
             </a>
 
             <div class="nav-controls">
-                <!-- زر تبديل اللغة -->
                 <button class="control-btn" id="lang-toggle" onclick="toggleLanguage()">
                     🌐 <span id="lang-label">English</span>
                 </button>
-                <!-- زر تبديل الثيم -->
                 <button class="control-btn" id="theme-toggle" onclick="toggleTheme()" title="تبديل الوضع">
                     🌙
                 </button>
@@ -449,7 +439,6 @@
             </div>
         </nav>
 
-        <!-- بطاقة الملف الشخصي -->
         <section class="profile-card">
             <div class="profile-top">
                 <div class="profile-info">
@@ -471,7 +460,6 @@
                 </div>
             </div>
 
-            <!-- روابط الحسابات -->
             <div class="social-pills">
                 <a href="https://www.youtube.com/@khairyeldelar" target="_blank" class="pill-btn">YouTube</a>
                 <a href="https://www.instagram.com/khairy.eldelar" target="_blank" class="pill-btn">Instagram</a>
@@ -481,20 +469,17 @@
             </div>
         </section>
 
-        <!-- بطاقة الترحيب -->
         <div class="welcome-card">
             <h2 data-ar="أهلاً بك 👋" data-en="Welcome 👋">أهلاً بك 👋</h2>
             <p data-ar="مساحة بسيطة وأنيقة للتطبيقات والشروحات والمعلومات المفيدة." data-en="A clean and thoughtful space for mobile apps, guides, and tech resources.">مساحة بسيطة وأنيقة للتطبيقات والشروحات والمعلومات المفيدة.</p>
         </div>
 
-        <!-- التطبيقات المنشورة -->
         <div class="section-bar">
             <h3 data-ar="📱 التطبيقات المنشورة" data-en="📱 Published Apps">📱 التطبيقات المنشورة</h3>
             <a href="https://play.google.com/store/apps/dev?id=5806307670414876238" target="_blank" data-ar="صفحة المطور ←" data-en="Developer Page →">صفحة المطور ←</a>
         </div>
 
         <div class="cards-grid">
-            <!-- تطبيق 1 -->
             <div class="app-item-card">
                 <div>
                     <span class="app-badge">Game / Survival</span>
@@ -504,7 +489,6 @@
                 <a href="https://play.google.com/store/apps/details?id=com.app.canyousurvivemobile" target="_blank" class="app-btn" data-ar="تحميل التطبيق ↗" data-en="Get on Google Play ↗">تحميل التطبيق ↗</a>
             </div>
 
-            <!-- تطبيق 2 -->
             <div class="app-item-card">
                 <div>
                     <span class="app-badge">Islamic / Utility</span>
@@ -514,7 +498,6 @@
                 <a href="https://play.google.com/store/apps/details?id=com.app.rafiqalmuslim" target="_blank" class="app-btn" data-ar="تحميل التطبيق ↗" data-en="Get on Google Play ↗">تحميل التطبيق ↗</a>
             </div>
 
-            <!-- تطبيق 3 -->
             <div class="app-item-card">
                 <div>
                     <span class="app-badge">Services / Guide</span>
@@ -525,7 +508,6 @@
             </div>
         </div>
 
-        <!-- ألبوم الصور -->
         <div class="section-bar">
             <h3 data-ar="🖼️ ألبوم الصور" data-en="🖼️ Photo Gallery">🖼️ ألبوم الصور</h3>
             <span style="color: var(--text-muted); font-size: 0.9rem;" data-ar="أرشيف الأعمال" data-en="Portfolio Highlights">أرشيف الأعمال</span>
@@ -552,13 +534,11 @@
 
     </div>
 
-    <!-- نافذة تكبير الصور -->
     <div id="lightbox" onclick="closeLightbox()">
         <img id="lightbox-img" src="" alt="Full size preview">
     </div>
 
     <script>
-        // إعدادات اللغة الافتراضية والحفظ
         let currentLang = localStorage.getItem('khairy_site_lang') || 'ar';
         let currentTheme = localStorage.getItem('khairy_site_theme') || 'light';
 
@@ -593,7 +573,6 @@
                 langLabel.textContent = 'English';
             }
 
-            // تحديث جميع النصوص التي تحمل data-ar و data-en
             document.querySelectorAll('[data-ar]').forEach(el => {
                 el.textContent = el.getAttribute(`data-${lang}`);
             });
@@ -606,11 +585,9 @@
             applyLanguage(currentLang);
         }
 
-        // تشغيل الإعدادات المحفوظة عند تحميل الصفحة
         applyTheme(currentTheme);
         applyLanguage(currentLang);
 
-        // وظائف معرض الصور (Lightbox)
         function openLightbox(element) {
             const imgSrc = element.querySelector('img').src;
             const lightbox = document.getElementById('lightbox');
