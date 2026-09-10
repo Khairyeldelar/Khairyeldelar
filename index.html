@@ -7,9 +7,9 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- بيانات محرك بحث Google (Schema.org JSON-LD) -->
+    <!-- كود البيانات المنظمة لمحركات البحث (Schema.org JSON-LD) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -40,17 +40,40 @@
             --text-muted: #64748b;
             --border-color: #edebe4;
             --badge-blue: #0ea5e9;
+            --pill-bg: #ffffff;
+            --pill-border: #e2e8f0;
+            --pill-text: #334155;
+            --badge-bg: #e0f2fe;
+            --radial-glow: radial-gradient(circle at 10% 80%, rgba(224, 242, 254, 0.5) 0%, transparent 60%);
+            --btn-bg: #f8fafc;
+        }
+
+        body.dark-mode {
+            --bg-color: #0b0f19;
+            --card-bg: #131b2e;
+            --primary: #38bdf8;
+            --accent-teal: #38bdf8;
+            --text-dark: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #1e293b;
+            --badge-blue: #38bdf8;
+            --pill-bg: #1e293b;
+            --pill-border: #334155;
+            --pill-text: #e2e8f0;
+            --badge-bg: rgba(56, 189, 248, 0.15);
+            --radial-glow: radial-gradient(circle at 10% 80%, rgba(56, 189, 248, 0.12) 0%, transparent 60%);
+            --btn-bg: #1e293b;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            font-family: 'Tajawal', sans-serif;
+            font-family: 'Tajawal', 'Inter', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-dark);
             line-height: 1.6;
-            direction: rtl;
             padding: 20px 15px 60px;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .container {
@@ -58,7 +81,7 @@
             margin: 0 auto;
         }
 
-        /* شريط التنقل العلوي الهادئ */
+        /* شريط التنقل العلوي */
         .top-nav {
             display: flex;
             align-items: center;
@@ -68,7 +91,8 @@
             border-radius: 50px;
             padding: 10px 18px;
             margin-bottom: 22px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
         }
 
         .nav-brand {
@@ -81,10 +105,37 @@
             text-decoration: none;
         }
 
-        .nav-actions {
+        .verified-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--badge-blue);
+        }
+
+        .nav-controls {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
+        }
+
+        .control-btn {
+            background: var(--btn-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-dark);
+            border-radius: 20px;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .control-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
         }
 
         .nav-avatar {
@@ -93,23 +144,10 @@
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--border-color);
+            margin-inline-start: 4px;
         }
 
-        .nav-icon-btn {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f8fafc;
-            border: 1px solid var(--border-color);
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 1.1rem;
-        }
-
-        /* البطاقة التعريفية الرئيسية (Hero Profile Card) */
+        /* البطاقة التعريفية (Hero) */
         .profile-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -119,7 +157,8 @@
             overflow: hidden;
             margin-bottom: 20px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-            background-image: radial-gradient(circle at 10% 80%, rgba(224, 242, 254, 0.45) 0%, transparent 60%);
+            background-image: var(--radial-glow);
+            transition: all 0.3s ease;
         }
 
         .profile-top {
@@ -130,9 +169,7 @@
             margin-bottom: 22px;
         }
 
-        .profile-info {
-            flex: 1;
-        }
+        .profile-info { flex: 1; }
 
         .profile-name-row {
             display: flex;
@@ -147,13 +184,6 @@
             color: var(--text-dark);
         }
 
-        .verified-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--badge-blue);
-        }
-
         .profile-role {
             color: var(--accent-teal);
             font-weight: 700;
@@ -164,50 +194,45 @@
         .profile-bio {
             color: var(--text-muted);
             font-size: 1rem;
-            max-width: 480px;
+            max-width: 500px;
         }
 
-        .profile-img-wrap {
-            position: relative;
-            flex-shrink: 0;
-        }
+        .profile-img-wrap { flex-shrink: 0; }
 
         .profile-img {
             width: 95px;
             height: 95px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #fff;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+            border: 3px solid var(--card-bg);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
             background: #e2e8f0;
         }
 
-        /* أزرار الحسابات (Pill Buttons) */
+        /* أزرار الحسابات (Pills) */
         .social-pills {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            border-top: 1px solid #f1f5f9;
+            border-top: 1px solid var(--border-color);
             padding-top: 20px;
         }
 
         .pill-btn {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            color: #334155;
+            background: var(--pill-bg);
+            border: 1px solid var(--pill-border);
+            color: var(--pill-text);
             padding: 7px 20px;
             border-radius: 50px;
             font-size: 0.95rem;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.2s ease;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
         }
 
         .pill-btn:hover {
             border-color: var(--primary);
             color: var(--primary);
-            background-color: #f0f9ff;
             transform: translateY(-1px);
         }
 
@@ -220,15 +245,13 @@
             margin-bottom: 35px;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
         }
 
         .welcome-card h2 {
             font-size: 1.45rem;
             font-weight: 800;
             margin-bottom: 6px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
             color: var(--text-dark);
         }
 
@@ -237,7 +260,7 @@
             font-size: 1.02rem;
         }
 
-        /* عناوين الأقسام */
+        /* شريط العناوين */
         .section-bar {
             display: flex;
             align-items: center;
@@ -258,7 +281,7 @@
             text-decoration: none;
         }
 
-        /* شبكة التطبيقات (Matching Cards Style) */
+        /* شبكة التطبيقات */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -275,18 +298,17 @@
             flex-direction: column;
             justify-content: space-between;
             transition: all 0.25s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
         }
 
         .app-item-card:hover {
             transform: translateY(-3px);
-            border-color: #cbd5e1;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border-color: var(--primary);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
         }
 
         .app-badge {
             display: inline-block;
-            background: #e0f2fe;
+            background: var(--badge-bg);
             color: var(--primary);
             padding: 3px 10px;
             border-radius: 20px;
@@ -312,8 +334,8 @@
         }
 
         .app-btn {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
+            background: var(--btn-bg);
+            border: 1px solid var(--border-color);
             color: var(--text-dark);
             text-align: center;
             padding: 8px 14px;
@@ -330,7 +352,7 @@
             border-color: var(--primary);
         }
 
-        /* معرض الصور (Photo Album) */
+        /* معرض الصور */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -344,14 +366,11 @@
             overflow: hidden;
             aspect-ratio: 1 / 1;
             cursor: pointer;
-            position: relative;
             box-shadow: 0 3px 10px rgba(0,0,0,0.02);
             transition: transform 0.2s ease;
         }
 
-        .gallery-card:hover {
-            transform: scale(1.02);
-        }
+        .gallery-card:hover { transform: scale(1.02); }
 
         .gallery-card img {
             width: 100%;
@@ -359,19 +378,19 @@
             object-fit: cover;
         }
 
-        /* معاينة الصورة الكبيرة (Lightbox) */
+        /* Lightbox */
         #lightbox {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(15, 23, 42, 0.85);
+            background: rgba(15, 23, 42, 0.88);
             display: none;
             align-items: center;
             justify-content: center;
             z-index: 9999;
-            backdrop-filter: blur(4px);
+            backdrop-filter: blur(5px);
         }
 
         #lightbox img {
@@ -381,9 +400,7 @@
             border: 2px solid rgba(255,255,255,0.2);
         }
 
-        #lightbox.active {
-            display: flex;
-        }
+        #lightbox.active { display: flex; }
 
         footer {
             text-align: center;
@@ -397,15 +414,10 @@
                 flex-direction: column-reverse;
                 text-align: center;
             }
-            .profile-name-row {
-                justify-content: center;
-            }
-            .profile-bio {
-                margin: 0 auto;
-            }
-            .social-pills {
-                justify-content: center;
-            }
+            .profile-name-row { justify-content: center; }
+            .profile-bio { margin: 0 auto; }
+            .social-pills { justify-content: center; }
+            .nav-brand span.brand-text { display: none; }
         }
     </style>
 </head>
@@ -413,7 +425,7 @@
 
     <div class="container">
 
-        <!-- شريط التنقل العلوي المطابق لمدونتك -->
+        <!-- شريط التنقل مع أزرار التحكم -->
         <nav class="top-nav">
             <a href="#" class="nav-brand">
                 <span class="verified-icon">
@@ -421,15 +433,23 @@
                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                     </svg>
                 </span>
-                Khairy Eid official Site
+                <span class="brand-text" data-ar="موقع خيري عيد الرسمي" data-en="Khairy Eid Official Site">موقع خيري عيد الرسمي</span>
             </a>
-            <div class="nav-actions">
+
+            <div class="nav-controls">
+                <!-- زر تبديل اللغة -->
+                <button class="control-btn" id="lang-toggle" onclick="toggleLanguage()">
+                    🌐 <span id="lang-label">English</span>
+                </button>
+                <!-- زر تبديل الثيم -->
+                <button class="control-btn" id="theme-toggle" onclick="toggleTheme()" title="تبديل الوضع">
+                    🌙
+                </button>
                 <img src="profile.jpg" alt="Avatar" class="nav-avatar" onerror="this.src='https://ui-avatars.com/api/?name=Khairy+Eid&background=0ea5e9&color=fff&size=80'">
-                <a href="https://khairyeid.blogspot.com/" target="_blank" class="nav-icon-btn" title="المدونة">🏠</a>
             </div>
         </nav>
 
-        <!-- بطاقة الملف الشخصي (Hero Card) -->
+        <!-- بطاقة الملف الشخصي -->
         <section class="profile-card">
             <div class="profile-top">
                 <div class="profile-info">
@@ -441,8 +461,8 @@
                         </span>
                         <h1>Khairy Eid Aly</h1>
                     </div>
-                    <div class="profile-role">مطور تطبيقات وصانع محتوى</div>
-                    <p class="profile-bio">
+                    <div class="profile-role" data-ar="مطور تطبيقات وصانع محتوى" data-en="Android Developer & Content Creator">مطور تطبيقات وصانع محتوى</div>
+                    <p class="profile-bio" data-ar="أشارك التطبيقات والشروحات والمعلومات التقنية بطريقة بسيطة ومفيدة، وأعمل على بناء ونشر الحلول الرقمية بنظام أندرويد." data-en="Sharing mobile applications, tutorials, and tech insights. Dedicated to building high-quality Android digital solutions.">
                         أشارك التطبيقات والشروحات والمعلومات التقنية بطريقة بسيطة ومفيدة، وأعمل على بناء ونشر الحلول الرقمية بنظام أندرويد.
                     </p>
                 </div>
@@ -451,26 +471,26 @@
                 </div>
             </div>
 
-            <!-- أزرار الحسابات (Pills) -->
+            <!-- روابط الحسابات -->
             <div class="social-pills">
                 <a href="https://www.youtube.com/@khairyeldelar" target="_blank" class="pill-btn">YouTube</a>
                 <a href="https://www.instagram.com/khairy.eldelar" target="_blank" class="pill-btn">Instagram</a>
                 <a href="https://www.facebook.com/khairy.eldelar" target="_blank" class="pill-btn">Facebook</a>
                 <a href="https://play.google.com/store/apps/dev?id=5806307670414876238" target="_blank" class="pill-btn">Google Play</a>
-                <a href="https://khairyeid.blogspot.com/" target="_blank" class="pill-btn">Blog</a>
+                <a href="https://khairyeid.blogspot.com/" target="_blank" class="pill-btn" data-ar="المدونة" data-en="Blog">المدونة</a>
             </div>
         </section>
 
-        <!-- بطاقة الترحيب المطابقة للمدونة -->
+        <!-- بطاقة الترحيب -->
         <div class="welcome-card">
-            <h2>أهلاً بك <span>👋</span></h2>
-            <p>مساحة بسيطة وأنيقة للتطبيقات والشروحات والمعلومات المفيدة.</p>
+            <h2 data-ar="أهلاً بك 👋" data-en="Welcome 👋">أهلاً بك 👋</h2>
+            <p data-ar="مساحة بسيطة وأنيقة للتطبيقات والشروحات والمعلومات المفيدة." data-en="A clean and thoughtful space for mobile apps, guides, and tech resources.">مساحة بسيطة وأنيقة للتطبيقات والشروحات والمعلومات المفيدة.</p>
         </div>
 
-        <!-- قسم التطبيقات على متجر بلاي -->
+        <!-- التطبيقات المنشورة -->
         <div class="section-bar">
-            <h3>📱 التطبيقات المنشورة</h3>
-            <a href="https://play.google.com/store/apps/dev?id=5806307670414876238" target="_blank">صفحة المطور ←</a>
+            <h3 data-ar="📱 التطبيقات المنشورة" data-en="📱 Published Apps">📱 التطبيقات المنشورة</h3>
+            <a href="https://play.google.com/store/apps/dev?id=5806307670414876238" target="_blank" data-ar="صفحة المطور ←" data-en="Developer Page →">صفحة المطور ←</a>
         </div>
 
         <div class="cards-grid">
@@ -479,9 +499,9 @@
                 <div>
                     <span class="app-badge">Game / Survival</span>
                     <h4>Can You Survive Mobile</h4>
-                    <p>لعبة تحدي البقاء الحماسية صممت لتقديم تجربة مشوقة وتفاعلية على أجهزة الأندرويد.</p>
+                    <p data-ar="لعبة تحدي البقاء الحماسية صممت لتقديم تجربة مشوقة وتفاعلية على أجهزة الأندرويد." data-en="An intense action-survival game built to offer an engaging and challenging experience on Android.">لعبة تحدي البقاء الحماسية صممت لتقديم تجربة مشوقة وتفاعلية على أجهزة الأندرويد.</p>
                 </div>
-                <a href="https://play.google.com/store/apps/details?id=com.app.canyousurvivemobile" target="_blank" class="app-btn">تحميل التطبيق ↗</a>
+                <a href="https://play.google.com/store/apps/details?id=com.app.canyousurvivemobile" target="_blank" class="app-btn" data-ar="تحميل التطبيق ↗" data-en="Get on Google Play ↗">تحميل التطبيق ↗</a>
             </div>
 
             <!-- تطبيق 2 -->
@@ -489,55 +509,108 @@
                 <div>
                     <span class="app-badge">Islamic / Utility</span>
                     <h4>رفيق المسلم (Rafiq Al Muslim)</h4>
-                    <p>تطبيق إسلامي يومي للأذكار والأدعية والخدمات الدينية الضرورية بتصميم هادئ ومريح.</p>
+                    <p data-ar="تطبيق إسلامي يومي للأذكار والأدعية والخدمات الدينية الضرورية بتصميم هادئ ومريح." data-en="A comprehensive Islamic daily companion for Azkar, Duas, and spiritual tools in a calm design.">تطبيق إسلامي يومي للأذكار والأدعية والخدمات الدينية الضرورية بتصميم هادئ ومريح.</p>
                 </div>
-                <a href="https://play.google.com/store/apps/details?id=com.app.rafiqalmuslim" target="_blank" class="app-btn">تحميل التطبيق ↗</a>
+                <a href="https://play.google.com/store/apps/details?id=com.app.rafiqalmuslim" target="_blank" class="app-btn" data-ar="تحميل التطبيق ↗" data-en="Get on Google Play ↗">تحميل التطبيق ↗</a>
             </div>
 
             <!-- تطبيق 3 -->
             <div class="app-item-card">
                 <div>
                     <span class="app-badge">Services / Guide</span>
-                    <h4>دليل طنبدي (Tanbadi Directory)</h4>
-                    <p>دليل خدمي شامل لتسهيل الوصول للأنشطة والخدمات والأرقام الهامة بسرعة وسلاسة.</p>
+                    <h4>دليل تنبدي (Tanbadi Directory)</h4>
+                    <p data-ar="دليل خدمي شامل لتسهيل الوصول للأنشطة والخدمات والأرقام الهامة بسرعة وسلاسة." data-en="A local service and community directory facilitating quick access to vital contacts and services.">دليل خدمي شامل لتسهيل الوصول للأنشطة والخدمات والأرقام الهامة بسرعة وسلاسة.</p>
                 </div>
-                <a href="https://play.google.com/store/apps/details?id=com.aistudio.tanbadidirectory.wbqzj" target="_blank" class="app-btn">تحميل التطبيق ↗</a>
+                <a href="https://play.google.com/store/apps/details?id=com.aistudio.tanbadidirectory.wbqzj" target="_blank" class="app-btn" data-ar="تحميل التطبيق ↗" data-en="Get on Google Play ↗">تحميل التطبيق ↗</a>
             </div>
         </div>
 
-        <!-- قسم ألبوم الصور المنسق -->
+        <!-- ألبوم الصور -->
         <div class="section-bar">
-            <h3>🖼️ ألبوم الصور</h3>
-            <span>أرشيف الأعمال</span>
+            <h3 data-ar="🖼️ ألبوم الصور" data-en="🖼️ Photo Gallery">🖼️ ألبوم الصور</h3>
+            <span style="color: var(--text-muted); font-size: 0.9rem;" data-ar="أرشيف الأعمال" data-en="Portfolio Highlights">أرشيف الأعمال</span>
         </div>
 
         <div class="gallery-grid">
             <div class="gallery-card" onclick="openLightbox(this)">
-                <img src="photo1.jpg" alt="صورة 1" onerror="this.src='https://via.placeholder.com/350/edebe4/64748b?text=Photo+1'">
+                <img src="photo1.jpg" alt="Photo 1" onerror="this.src='https://via.placeholder.com/350/edebe4/64748b?text=Photo+1'">
             </div>
             <div class="gallery-card" onclick="openLightbox(this)">
-                <img src="photo2.jpg" alt="صورة 2" onerror="this.src='https://via.placeholder.com/350/edebe4/64748b?text=Photo+2'">
+                <img src="photo2.jpg" alt="Photo 2" onerror="this.src='https://via.placeholder.com/350/edebe4/64748b?text=Photo+2'">
             </div>
             <div class="gallery-card" onclick="openLightbox(this)">
-                <img src="photo3.jpg" alt="صورة 3" onerror="this.src='https://via.placeholder.com/350/edebe4/64748b?text=Photo+3'">
+                <img src="photo3.jpg" alt="Photo 3" onerror="this.src='https://via.placeholder.com/350/edebe4/64748b?text=Photo+3'">
             </div>
             <div class="gallery-card" onclick="openLightbox(this)">
-                <img src="photo4.jpg" alt="صورة 4" onerror="this.src='https://via.placeholder.com/350/edebe4/64748b?text=Photo+4'">
+                <img src="photo4.jpg" alt="Photo 4" onerror="this.src='https://via.placeholder.com/350/edebe4/64748b?text=Photo+4'">
             </div>
         </div>
 
         <footer>
-            <p>© Khairy Eid Aly (خيري عيد علي) - جميع الحقوق محفوظة</p>
+            <p data-ar="© Khairy Eid Aly (خيري عيد علي) - جميع الحقوق محفوظة" data-en="© Khairy Eid Aly - All Rights Reserved">© Khairy Eid Aly (خيري عيد علي) - جميع الحقوق محفوظة</p>
         </footer>
 
     </div>
 
-    <!-- نافذة عرض الصور بالحجم الكامل -->
+    <!-- نافذة تكبير الصور -->
     <div id="lightbox" onclick="closeLightbox()">
         <img id="lightbox-img" src="" alt="Full size preview">
     </div>
 
     <script>
+        // إعدادات اللغة الافتراضية والحفظ
+        let currentLang = localStorage.getItem('khairy_site_lang') || 'ar';
+        let currentTheme = localStorage.getItem('khairy_site_theme') || 'light';
+
+        function applyTheme(theme) {
+            const themeBtn = document.getElementById('theme-toggle');
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+                themeBtn.textContent = '☀️';
+            } else {
+                document.body.classList.remove('dark-mode');
+                themeBtn.textContent = '🌙';
+            }
+            localStorage.setItem('khairy_site_theme', theme);
+        }
+
+        function toggleTheme() {
+            currentTheme = (currentTheme === 'light') ? 'dark' : 'light';
+            applyTheme(currentTheme);
+        }
+
+        function applyLanguage(lang) {
+            const html = document.documentElement;
+            const langLabel = document.getElementById('lang-label');
+            
+            if (lang === 'en') {
+                html.setAttribute('dir', 'ltr');
+                html.setAttribute('lang', 'en');
+                langLabel.textContent = 'العربية';
+            } else {
+                html.setAttribute('dir', 'rtl');
+                html.setAttribute('lang', 'ar');
+                langLabel.textContent = 'English';
+            }
+
+            // تحديث جميع النصوص التي تحمل data-ar و data-en
+            document.querySelectorAll('[data-ar]').forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            });
+
+            localStorage.setItem('khairy_site_lang', lang);
+        }
+
+        function toggleLanguage() {
+            currentLang = (currentLang === 'ar') ? 'en' : 'ar';
+            applyLanguage(currentLang);
+        }
+
+        // تشغيل الإعدادات المحفوظة عند تحميل الصفحة
+        applyTheme(currentTheme);
+        applyLanguage(currentLang);
+
+        // وظائف معرض الصور (Lightbox)
         function openLightbox(element) {
             const imgSrc = element.querySelector('img').src;
             const lightbox = document.getElementById('lightbox');
