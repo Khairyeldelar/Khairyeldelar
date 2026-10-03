@@ -152,7 +152,7 @@
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 22px;
-            padding: 24px 20px;
+            padding: 22px 18px;
             position: relative;
             overflow: hidden;
             margin-bottom: 16px;
@@ -165,7 +165,7 @@
             align-items: center;
             justify-content: space-between;
             gap: 16px;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .profile-info { flex: 1; }
@@ -178,7 +178,7 @@
         }
 
         .profile-name-row h1 {
-            font-size: 1.45rem;
+            font-size: 1.4rem;
             font-weight: 800;
             color: var(--text-dark);
         }
@@ -186,13 +186,13 @@
         .profile-role {
             color: var(--accent-teal);
             font-weight: 700;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             margin-bottom: 6px;
         }
 
         .profile-bio {
             color: var(--text-muted);
-            font-size: 0.92rem;
+            font-size: 0.88rem;
             line-height: 1.5;
             max-width: 480px;
         }
@@ -200,8 +200,8 @@
         .profile-img-wrap { flex-shrink: 0; }
 
         .profile-img {
-            width: 82px;
-            height: 82px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--card-bg);
@@ -209,28 +209,32 @@
             background: #e2e8f0;
         }
 
-        /* أزرار التواصل المصغّرة والأفقية */
+        /* أزرار التواصل: 5 في صف أفقي واحد */
         .social-pills {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 6px;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 5px;
             border-top: 1px solid var(--border-color);
-            padding-top: 14px;
+            padding-top: 12px;
+            width: 100%;
         }
 
         .pill-btn {
             background: var(--pill-bg);
             border: 1px solid var(--pill-border);
             color: var(--pill-text);
-            padding: 4px 11px;
-            border-radius: 20px;
-            font-size: 0.78rem;
+            padding: 5px 2px;
+            border-radius: 10px;
+            font-size: 0.72rem;
             font-weight: 600;
             text-decoration: none;
-            display: inline-flex;
+            display: flex;
             align-items: center;
-            gap: 4px;
+            justify-content: center;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
             transition: all 0.2s ease;
         }
 
@@ -245,81 +249,81 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin: 24px 4px 12px;
+            margin: 22px 4px 10px;
         }
 
         .section-bar h3 {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 800;
             color: var(--text-dark);
         }
 
         .section-bar a {
             color: var(--accent-teal);
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 600;
             text-decoration: none;
         }
 
-        /* قسم نبذة عني المدمج */
+        /* قسم نبذة عني */
         .about-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 18px;
-            padding: 18px 20px;
-            margin-bottom: 20px;
+            border-radius: 16px;
+            padding: 16px 18px;
+            margin-bottom: 16px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
 
         .about-main-text {
             color: var(--text-dark);
-            font-size: 0.92rem;
-            line-height: 1.65;
-            margin-bottom: 12px;
+            font-size: 0.88rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
         }
 
         .about-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
+            gap: 8px;
         }
 
         .about-feature {
             background: var(--btn-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 12px;
+            border-radius: 10px;
+            padding: 10px;
         }
 
         .about-feature h5 {
-            font-size: 0.88rem;
+            font-size: 0.84rem;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 4px;
+            margin-bottom: 3px;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
         }
 
         .about-feature p {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: var(--text-muted);
-            line-height: 1.45;
+            line-height: 1.4;
         }
 
-        /* شبكة بطاقات التطبيقات المصغّرة والأنيقة */
+        /* شبكة التطبيقات: بطاقتين فوق وبطاقتين تحت */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 12px;
-            margin-bottom: 24px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
         }
 
         .app-item-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 14px 16px;
+            border-radius: 14px;
+            padding: 12px 10px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -329,20 +333,20 @@
         .app-item-card:hover {
             transform: translateY(-2px);
             border-color: var(--primary);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
         }
 
         .app-header {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 8px;
+            gap: 8px;
+            margin-bottom: 6px;
         }
 
         .app-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 10px;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
             object-fit: cover;
             flex-shrink: 0;
             border: 1px solid var(--border-color);
@@ -355,7 +359,7 @@
         }
 
         .app-title-group h4 {
-            font-size: 0.96rem;
+            font-size: 0.84rem;
             font-weight: 700;
             color: var(--text-dark);
             margin-bottom: 2px;
@@ -368,10 +372,11 @@
             display: inline-block;
             background: var(--badge-bg);
             color: var(--primary);
-            padding: 1px 7px;
-            border-radius: 8px;
-            font-size: 0.7rem;
+            padding: 1px 6px;
+            border-radius: 6px;
+            font-size: 0.65rem;
             font-weight: 700;
+            white-space: nowrap;
         }
 
         .badge-new {
@@ -386,9 +391,13 @@
 
         .app-desc {
             color: var(--text-muted);
-            font-size: 0.84rem;
-            margin-bottom: 12px;
-            line-height: 1.45;
+            font-size: 0.76rem;
+            margin-bottom: 10px;
+            line-height: 1.35;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
             flex-grow: 1;
         }
 
@@ -397,15 +406,15 @@
             border: 1px solid var(--border-color);
             color: var(--text-dark);
             text-align: center;
-            padding: 6px 12px;
-            border-radius: 10px;
+            padding: 5px 8px;
+            border-radius: 8px;
             text-decoration: none;
-            font-size: 0.8rem;
+            font-size: 0.74rem;
             font-weight: 700;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            gap: 4px;
             transition: all 0.2s ease;
         }
 
@@ -418,14 +427,14 @@
         /* ألبوم الصور */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 10px;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 8px;
         }
 
         .gallery-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 14px;
+            border-radius: 12px;
             overflow: hidden;
             aspect-ratio: 1 / 1;
             cursor: pointer;
@@ -466,9 +475,9 @@
 
         footer {
             text-align: center;
-            margin-top: 35px;
+            margin-top: 30px;
             color: var(--text-muted);
-            font-size: 0.82rem;
+            font-size: 0.8rem;
         }
 
         @media (max-width: 580px) {
@@ -478,9 +487,7 @@
             }
             .profile-name-row { justify-content: center; }
             .profile-bio { margin: 0 auto; }
-            .social-pills { justify-content: center; }
             .nav-brand span.brand-text { display: none; }
-            .cards-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -514,7 +521,7 @@
                 <div class="profile-info">
                     <div class="profile-name-row">
                         <span class="verified-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                             </svg>
                         </span>
@@ -530,7 +537,7 @@
                 </div>
             </div>
 
-            <!-- أزرار التواصل صغيرة وأفقية جنب بعضها -->
+            <!-- أزرار التواصل الخمسة في صف أفقي واحد -->
             <div class="social-pills">
                 <a href="https://play.google.com/store/apps/dev?id=5806307670414876238" target="_blank" class="pill-btn">Google Play</a>
                 <a href="https://www.youtube.com/@khairyeldelar" target="_blank" class="pill-btn">YouTube</a>
@@ -540,10 +547,10 @@
             </div>
         </section>
 
-        <!-- قسم نبذة عني بعد إزالة وسوم الكوتلن والجافا -->
+        <!-- قسم نبذة عني -->
         <div class="section-bar">
             <h3 data-ar="👨‍💻 نبذة عني" data-en="👨‍💻 About Me">👨‍💻 نبذة عني</h3>
-            <span style="color: var(--text-muted); font-size: 0.85rem;" data-ar="الملف المهني" data-en="Professional Profile">الملف المهني</span>
+            <span style="color: var(--text-muted); font-size: 0.8rem;" data-ar="الملف المهني" data-en="Professional Profile">الملف المهني</span>
         </div>
 
         <section class="about-card">
@@ -584,7 +591,7 @@
             </div>
         </section>
 
-        <!-- قسم التطبيقات بتصميم البطاقات الخفيفة والمصغرة -->
+        <!-- قسم التطبيقات: 4 بطاقات (2 فوق و2 تحت) -->
         <div class="section-bar">
             <h3 data-ar="📱 التطبيقات المنشورة" data-en="📱 Published Apps">📱 التطبيقات المنشورة</h3>
             <a href="https://play.google.com/store/apps/dev?id=5806307670414876238" target="_blank" data-ar="صفحة المطور ←" data-en="Developer Page →">صفحة المطور ←</a>
@@ -596,9 +603,9 @@
             <div class="app-item-card">
                 <div>
                     <div class="app-header">
-                        <img src="icon-mylinks.png" alt="My Links" class="app-icon" onerror="this.src='https://ui-avatars.com/api/?name=My+Links&background=0284c7&color=fff&size=100&rounded=true'">
+                        <img src="icon-mylinks.png" alt="My Links" class="app-icon" onerror="this.src='https://ui-avatars.com/api/?name=My+Links&background=0284c7&color=fff&size=80&rounded=true'">
                         <div class="app-title-group">
-                            <h4 data-ar="ماي لينكس (My Links)" data-en="My Links">ماي لينكس (My Links)</h4>
+                            <h4 data-ar="ماي لينكس" data-en="My Links">ماي لينكس</h4>
                             <span class="app-badge badge-new" data-ar="جديد ✨ أدوات" data-en="New ✨ Tools">جديد ✨ أدوات</span>
                         </div>
                     </div>
@@ -607,7 +614,7 @@
                     </p>
                 </div>
                 <a href="https://play.google.com/store/apps/details?id=com.khairy.mylinks" target="_blank" class="app-btn">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M3.609 1.814L13.792 12 3.61 22.186a2.41 2.41 0 0 1-.61-.926V2.74c.15-.36.368-.68.609-.926zm11.306 11.309L6.152 21.886c.32.18.69.28 1.07.28.48 0 .93-.16 1.3-.44l9.043-5.263-2.65-3.34zm0-2.246l2.65-3.34-9.043-5.263c-.37-.28-.82-.44-1.3-.44-.38 0-.75.1-1.07.28l8.763 8.763zm1.602 1.123l3.856 2.245c.96.56.96 1.48 0 2.04l-3.856 2.245-2.29-2.265 2.29-2.265z"/>
                     </svg>
                     <span data-ar="تثبيت ↗" data-en="Install ↗">تثبيت ↗</span>
@@ -618,7 +625,7 @@
             <div class="app-item-card">
                 <div>
                     <div class="app-header">
-                        <img src="icon-rafiq.png" alt="Rafiq Al Muslim" class="app-icon" onerror="this.src='https://ui-avatars.com/api/?name=رفيق+المسلم&background=059669&color=fff&size=100&rounded=true'">
+                        <img src="icon-rafiq.png" alt="Rafiq Al Muslim" class="app-icon" onerror="this.src='https://ui-avatars.com/api/?name=رفيق&background=059669&color=fff&size=80&rounded=true'">
                         <div class="app-title-group">
                             <h4 data-ar="رفيق المسلم" data-en="Rafiq Al Muslim">رفيق المسلم</h4>
                             <span class="app-badge" data-ar="إسلاميات" data-en="Islamic">إسلاميات</span>
@@ -629,7 +636,7 @@
                     </p>
                 </div>
                 <a href="https://play.google.com/store/apps/details?id=com.app.rafiqalmuslim" target="_blank" class="app-btn">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M3.609 1.814L13.792 12 3.61 22.186a2.41 2.41 0 0 1-.61-.926V2.74c.15-.36.368-.68.609-.926zm11.306 11.309L6.152 21.886c.32.18.69.28 1.07.28.48 0 .93-.16 1.3-.44l9.043-5.263-2.65-3.34zm0-2.246l2.65-3.34-9.043-5.263c-.37-.28-.82-.44-1.3-.44-.38 0-.75.1-1.07.28l8.763 8.763zm1.602 1.123l3.856 2.245c.96.56.96 1.48 0 2.04l-3.856 2.245-2.29-2.265 2.29-2.265z"/>
                     </svg>
                     <span data-ar="تثبيت ↗" data-en="Install ↗">تثبيت ↗</span>
@@ -640,7 +647,7 @@
             <div class="app-item-card">
                 <div>
                     <div class="app-header">
-                        <img src="icon-tanbadi.png" alt="Tanbadi Directory" class="app-icon" onerror="this.src='https://ui-avatars.com/api/?name=دليل+طنبدي&background=d97706&color=fff&size=100&rounded=true'">
+                        <img src="icon-tanbadi.png" alt="Tanbadi Directory" class="app-icon" onerror="this.src='https://ui-avatars.com/api/?name=طنبدي&background=d97706&color=fff&size=80&rounded=true'">
                         <div class="app-title-group">
                             <h4 data-ar="دليل طنبدي" data-en="Tanbadi Directory">دليل طنبدي</h4>
                             <span class="app-badge" data-ar="خدمات" data-en="Services">خدمات</span>
@@ -651,7 +658,7 @@
                     </p>
                 </div>
                 <a href="https://play.google.com/store/apps/details?id=com.aistudio.tanbadidirectory.wbqzj" target="_blank" class="app-btn">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M3.609 1.814L13.792 12 3.61 22.186a2.41 2.41 0 0 1-.61-.926V2.74c.15-.36.368-.68.609-.926zm11.306 11.309L6.152 21.886c.32.18.69.28 1.07.28.48 0 .93-.16 1.3-.44l9.043-5.263-2.65-3.34zm0-2.246l2.65-3.34-9.043-5.263c-.37-.28-.82-.44-1.3-.44-.38 0-.75.1-1.07.28l8.763 8.763zm1.602 1.123l3.856 2.245c.96.56.96 1.48 0 2.04l-3.856 2.245-2.29-2.265 2.29-2.265z"/>
                     </svg>
                     <span data-ar="تثبيت ↗" data-en="Install ↗">تثبيت ↗</span>
@@ -662,7 +669,7 @@
             <div class="app-item-card">
                 <div>
                     <div class="app-header">
-                        <img src="icon-survival.png" alt="Can You Survive" class="app-icon" onerror="this.src='https://ui-avatars.com/api/?name=Survive&background=dc2626&color=fff&size=100&rounded=true'">
+                        <img src="icon-survival.png" alt="Can You Survive" class="app-icon" onerror="this.src='https://ui-avatars.com/api/?name=Survive&background=dc2626&color=fff&size=80&rounded=true'">
                         <div class="app-title-group">
                             <h4 data-ar="Can You Survive" data-en="Can You Survive">Can You Survive</h4>
                             <span class="app-badge" data-ar="ألعاب" data-en="Games">ألعاب</span>
@@ -673,7 +680,7 @@
                     </p>
                 </div>
                 <a href="https://play.google.com/store/apps/details?id=com.app.canyousurvivemobile" target="_blank" class="app-btn">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M3.609 1.814L13.792 12 3.61 22.186a2.41 2.41 0 0 1-.61-.926V2.74c.15-.36.368-.68.609-.926zm11.306 11.309L6.152 21.886c.32.18.69.28 1.07.28.48 0 .93-.16 1.3-.44l9.043-5.263-2.65-3.34zm0-2.246l2.65-3.34-9.043-5.263c-.37-.28-.82-.44-1.3-.44-.38 0-.75.1-1.07.28l8.763 8.763zm1.602 1.123l3.856 2.245c.96.56.96 1.48 0 2.04l-3.856 2.245-2.29-2.265 2.29-2.265z"/>
                     </svg>
                     <span data-ar="تثبيت ↗" data-en="Install ↗">تثبيت ↗</span>
@@ -684,7 +691,7 @@
 
         <div class="section-bar">
             <h3 data-ar="🖼️ ألبوم الصور" data-en="🖼️ Photo Gallery">🖼️ ألبوم الصور</h3>
-            <span style="color: var(--text-muted); font-size: 0.85rem;" data-ar="أرشيف الأعمال" data-en="Portfolio Highlights">أرشيف الأعمال</span>
+            <span style="color: var(--text-muted); font-size: 0.8rem;" data-ar="أرشيف الأعمال" data-en="Portfolio Highlights">أرشيف الأعمال</span>
         </div>
 
         <div class="gallery-grid">
