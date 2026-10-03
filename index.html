@@ -18,16 +18,17 @@
         "name": "Khairy Eid Aly",
         "alternateName": ["خيري عيد علي", "Khairy Eldelar"],
         "jobTitle": "Android Application Developer",
+        "description": "مطور تطبيقات أندرويد وصانع محتوى تقني مصري، متخصص في بناء تطبيقات الهواتف الذكية والحلول الخدمية السحابية ونشر الشروحات التقنية.",
         "url": "https://khairyeldelar.github.io/Khairyeldelar/",
+        "image": "https://khairyeldelar.github.io/Khairyeldelar/profile.jpg",
         "sameAs": [
-            "https://www.wikidata.org/wiki/Q141412269",
             "https://play.google.com/store/apps/dev?id=5806307670414876238",
             "https://khairyeid.blogspot.com/",
             "https://www.facebook.com/khairy.eldelar",
             "https://www.instagram.com/khairy.eldelar",
             "https://www.youtube.com/@khairyeldelar"
         ],
-        "knowsAbout": ["Android Development", "Mobile Applications", "Google Play", "Kotlin", "Java"]
+        "knowsAbout": ["Android Development", "Mobile Applications", "Google Play Console", "Kotlin", "Java", "Firebase", "UI/UX Design", "Tech Blogging"]
     }
     </script>
     
@@ -239,7 +240,7 @@
             border: 1px solid var(--border-color);
             border-radius: 24px;
             padding: 24px 30px;
-            margin-bottom: 35px;
+            margin-bottom: 25px;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.02);
             transition: all 0.3s ease;
@@ -277,54 +278,161 @@
             text-decoration: none;
         }
 
+        /* تصميم قسم نبذة عني */
+        .about-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 28px;
+            margin-bottom: 35px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+        }
+
+        .about-main-text {
+            color: var(--text-dark);
+            font-size: 1.02rem;
+            line-height: 1.75;
+            margin-bottom: 20px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 14px;
+            margin-top: 15px;
+        }
+
+        .about-feature {
+            background: var(--btn-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 16px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .about-feature:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+
+        .about-feature h5 {
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .about-feature p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .skills-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 22px;
+            padding-top: 18px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .skill-tag {
+            background: var(--badge-bg);
+            color: var(--primary);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+        }
+
+        /* شبكة التطبيقات */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 18px;
             margin-bottom: 35px;
         }
 
         .app-item-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 20px;
+            border-radius: 22px;
             padding: 20px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: all 0.25s ease;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
         }
 
         .app-item-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
             border-color: var(--primary);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+        }
+
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 12px;
+        }
+
+        .app-icon {
+            width: 58px;
+            height: 58px;
+            border-radius: 14px;
+            object-fit: cover;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+            border: 1px solid var(--border-color);
+            background: var(--btn-bg);
+        }
+
+        .app-title-group {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .app-title-group h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+            line-height: 1.3;
         }
 
         .app-badge {
             display: inline-block;
             background: var(--badge-bg);
             color: var(--primary);
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 0.78rem;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
             font-weight: 700;
-            margin-bottom: 12px;
-            width: fit-content;
         }
 
-        .app-item-card h4 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 6px;
-            color: var(--text-dark);
+        .badge-new {
+            background: rgba(245, 158, 11, 0.15);
+            color: #d97706;
         }
 
-        .app-item-card p {
+        body.dark-mode .badge-new {
+            background: rgba(245, 158, 11, 0.25);
+            color: #fbbf24;
+        }
+
+        .app-desc {
             color: var(--text-muted);
             font-size: 0.92rem;
             margin-bottom: 18px;
-            line-height: 1.5;
+            line-height: 1.55;
             flex-grow: 1;
         }
 
@@ -333,11 +441,15 @@
             border: 1px solid var(--border-color);
             color: var(--text-dark);
             text-align: center;
-            padding: 8px 14px;
-            border-radius: 12px;
+            padding: 10px 14px;
+            border-radius: 14px;
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
             transition: all 0.2s ease;
         }
 
@@ -345,6 +457,10 @@
             background: var(--primary);
             color: #ffffff;
             border-color: var(--primary);
+        }
+
+        .app-btn svg {
+            flex-shrink: 0;
         }
 
         .gallery-grid {
@@ -403,6 +519,9 @@
         }
 
         @media (max-width: 580px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
             .profile-top {
                 flex-direction: column-reverse;
                 text-align: center;
@@ -474,38 +593,156 @@
             <p data-ar="مساحة بسيطة وأنيقة للتطبيقات والشروحات والمعلومات المفيدة." data-en="A clean and thoughtful space for mobile apps, guides, and tech resources.">مساحة بسيطة وأنيقة للتطبيقات والشروحات والمعلومات المفيدة.</p>
         </div>
 
+        <!-- قسم نبذة عني (مبني على المعلومات الموثقة) -->
+        <div class="section-bar">
+            <h3 data-ar="👨‍💻 نبذة عني" data-en="👨‍💻 About Me">👨‍💻 نبذة عني</h3>
+            <span style="color: var(--text-muted); font-size: 0.9rem;" data-ar="الملف المهني" data-en="Professional Profile">الملف المهني</span>
+        </div>
+
+        <section class="about-card">
+            <p class="about-main-text" data-ar="مطور تطبيقات أندرويد وصانع محتوى تقني مصري، معروف في المجتمع التقني باسم (خيري الديلر). أمتلك شغفاً عميقاً ببرمجة وتطوير تطبيقات الهواتف الذكية وتصميم الواجهات السلسة وتوظيف الخدمات السحابية، مع التركيز على بناء حلول خدمية وأدوات إنتاجية خفيفة تلبي احتياجات المستخدم العربي اليومية." data-en="Egyptian Android application developer and tech content creator, known in the community as 'Khairy Eldelar'. Dedicated to engineering sleek mobile experiences, cloud backend integrations, and creating practical utility tools that simplify daily digital routines.">
+                مطور تطبيقات أندرويد وصانع محتوى تقني مصري، معروف في المجتمع التقني باسم (خيري الديلر). أمتلك شغفاً عميقاً ببرمجة وتطوير تطبيقات الهواتف الذكية وتصميم الواجهات السلسة وتوظيف الخدمات السحابية، مع التركيز على بناء حلول خدمية وأدوات إنتاجية خفيفة تلبي احتياجات المستخدم العربي اليومية.
+            </p>
+
+            <div class="about-grid">
+                <div class="about-feature">
+                    <h5>
+                        <span>📱</span>
+                        <span data-ar="هندسة تطبيقات أندرويد" data-en="Android Engineering">هندسة تطبيقات أندرويد</span>
+                    </h5>
+                    <p data-ar="بناء وتطوير ونشر تطبيقات الهاتف على متجر Google Play مع مراعاة أعلى معايير الاستقرار وتجربة المستخدم الحديثة." data-en="Developing, architecting, and publishing production-ready Android apps on Google Play with focus on smooth UX and stability.">
+                        بناء وتطوير ونشر تطبيقات الهاتف على متجر Google Play مع مراعاة أعلى معايير الاستقرار وتجربة المستخدم الحديثة.
+                    </p>
+                </div>
+
+                <div class="about-feature">
+                    <h5>
+                        <span>🎬</span>
+                        <span data-ar="صناعة المحتوى والتدوين" data-en="Tech Content & Blogging">صناعة المحتوى والتدوين</span>
+                    </h5>
+                    <p data-ar="صانع محتوى مرئي وتدويني بقاعدة تزيد عن 30 ألف متابع، يقدم شروحات تقنية، حلول للمشاكل الرقمية، والتوعية بأمان التطبيقات." data-en="Tech creator with over 30K subscribers, delivering practical tutorials, digital troubleshooting, and app safety guidance.">
+                        صانع محتوى مرئي وتدويني بقاعدة تزيد عن 30 ألف متابع، يقدم شروحات تقنية، حلول للمشاكل الرقمية، والتوعية بأمان التطبيقات.
+                    </p>
+                </div>
+
+                <div class="about-feature">
+                    <h5>
+                        <span>🤝</span>
+                        <span data-ar="حلول مجتمعية وخدمية" data-en="Community Solutions">حلول مجتمعية وخدمية</span>
+                    </h5>
+                    <p data-ar="تطوير أدوات خدمية تخدم المجتمعات المحلية مثل أدلة الخدمات والتطبيقات الدينية وإدارة الروابط السحابية." data-en="Crafting targeted digital tools that serve local communities, spiritual daily companions, and swift cloud link hubs.">
+                        تطوير أدوات خدمية تخدم المجتمعات المحلية مثل أدلة الخدمات والتطبيقات الدينية وإدارة الروابط السحابية.
+                    </p>
+                </div>
+            </div>
+
+            <div class="skills-pills">
+                <span class="skill-tag">Kotlin</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Android Studio</span>
+                <span class="skill-tag">Firebase Cloud</span>
+                <span class="skill-tag">Google Play Console</span>
+                <span class="skill-tag">UI / UX Design</span>
+                <span class="skill-tag">Tech Blogging</span>
+            </div>
+        </section>
+
+        <!-- قسم التطبيقات المنشورة -->
         <div class="section-bar">
             <h3 data-ar="📱 التطبيقات المنشورة" data-en="📱 Published Apps">📱 التطبيقات المنشورة</h3>
             <a href="https://play.google.com/store/apps/dev?id=5806307670414876238" target="_blank" data-ar="صفحة المطور ←" data-en="Developer Page →">صفحة المطور ←</a>
         </div>
 
         <div class="cards-grid">
+
+            <!-- 1. التطبيق الجديد: ماي لينكس -->
             <div class="app-item-card">
                 <div>
-                    <span class="app-badge">Game / Survival</span>
-                    <h4>Can You Survive Mobile</h4>
-                    <p data-ar="لعبة تحدي البقاء الحماسية صممت لتقديم تجربة مشوقة وتفاعلية على أجهزة الأندرويد." data-en="An intense action-survival game built to offer an engaging and challenging experience on Android.">لعبة تحدي البقاء الحماسية صممت لتقديم تجربة مشوقة وتفاعلية على أجهزة الأندرويد.</p>
+                    <div class="app-header">
+                        <img src="icon-mylinks.png" alt="My Links" class="app-icon" onerror="this.src='https://ui-avatars.com/api/?name=My+Links&background=0284c7&color=fff&size=120&rounded=true'">
+                        <div class="app-title-group">
+                            <h4 data-ar="ماي لينكس (My Links)" data-en="My Links (ماي لينكس)">ماي لينكس (My Links)</h4>
+                            <span class="app-badge badge-new" data-ar="جديد ✨ أدوات / إنتاجية" data-en="New ✨ Tools / Productivity">جديد ✨ أدوات / إنتاجية</span>
+                        </div>
+                    </div>
+                    <p class="app-desc" data-ar="تطبيقك المتكامل لتنظيم وإدارة ومشاركة جميع روابطك المهمة وحساباتك وملفاتك في واجهة واحدة سريعة ومحمية." data-en="All-in-one hub to organize, manage, and share your vital links, social profiles, and resources in a swift, secure interface.">
+                        تطبيقك المتكامل لتنظيم وإدارة ومشاركة جميع روابطك المهمة وحساباتك وملفاتك في واجهة واحدة سريعة ومحمية.
+                    </p>
                 </div>
-                <a href="https://play.google.com/store/apps/details?id=com.app.canyousurvivemobile" target="_blank" class="app-btn" data-ar="تحميل التطبيق ↗" data-en="Get on Google Play ↗">تحميل التطبيق ↗</a>
+                <a href="https://play.google.com/store/apps/details?id=com.khairy.mylinks" target="_blank" class="app-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3.609 1.814L13.792 12 3.61 22.186a2.41 2.41 0 0 1-.61-.926V2.74c.15-.36.368-.68.609-.926zm11.306 11.309L6.152 21.886c.32.18.69.28 1.07.28.48 0 .93-.16 1.3-.44l9.043-5.263-2.65-3.34zm0-2.246l2.65-3.34-9.043-5.263c-.37-.28-.82-.44-1.3-.44-.38 0-.75.1-1.07.28l8.763 8.763zm1.602 1.123l3.856 2.245c.96.56.96 1.48 0 2.04l-3.856 2.245-2.29-2.265 2.29-2.265z"/>
+                    </svg>
+                    <span data-ar="تحميل من Google Play ↗" data-en="Get on Google Play ↗">تحميل من Google Play ↗</span>
+                </a>
             </div>
 
+            <!-- 2. رفيق المسلم -->
             <div class="app-item-card">
                 <div>
-                    <span class="app-badge">Islamic / Utility</span>
-                    <h4>رفيق المسلم (Rafiq Al Muslim)</h4>
-                    <p data-ar="تطبيق إسلامي يومي للأذكار والأدعية والخدمات الدينية الضرورية بتصميم هادئ ومريح." data-en="A comprehensive Islamic daily companion for Azkar, Duas, and spiritual tools in a calm design.">تطبيق إسلامي يومي للأذكار والأدعية والخدمات الدينية الضرورية بتصميم هادئ ومريح.</p>
+                    <div class="app-header">
+                        <img src="icon-rafiq.png" alt="Rafiq Al Muslim" class="app-icon" onerror="this.src='https://ui-avatars.com/api/?name=رفيق+المسلم&background=059669&color=fff&size=120&rounded=true'">
+                        <div class="app-title-group">
+                            <h4 data-ar="رفيق المسلم (Rafiq Al Muslim)" data-en="Rafiq Al Muslim (رفيق المسلم)">رفيق المسلم (Rafiq Al Muslim)</h4>
+                            <span class="app-badge" data-ar="إسلاميات / أدوات" data-en="Islamic / Utility">إسلاميات / أدوات</span>
+                        </div>
+                    </div>
+                    <p class="app-desc" data-ar="تطبيق إسلامي يومي للأذكار والأدعية والخدمات الدينية الضرورية بتصميم هادئ ومريح دون إعلانات مشتتة." data-en="A serene, distraction-free daily Islamic companion offering essential Azkar, Duas, and spiritual tools.">
+                        تطبيق إسلامي يومي للأذكار والأدعية والخدمات الدينية الضرورية بتصميم هادئ ومريح دون إعلانات مشتتة.
+                    </p>
                 </div>
-                <a href="https://play.google.com/store/apps/details?id=com.app.rafiqalmuslim" target="_blank" class="app-btn" data-ar="تحميل التطبيق ↗" data-en="Get on Google Play ↗">تحميل التطبيق ↗</a>
+                <a href="https://play.google.com/store/apps/details?id=com.app.rafiqalmuslim" target="_blank" class="app-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3.609 1.814L13.792 12 3.61 22.186a2.41 2.41 0 0 1-.61-.926V2.74c.15-.36.368-.68.609-.926zm11.306 11.309L6.152 21.886c.32.18.69.28 1.07.28.48 0 .93-.16 1.3-.44l9.043-5.263-2.65-3.34zm0-2.246l2.65-3.34-9.043-5.263c-.37-.28-.82-.44-1.3-.44-.38 0-.75.1-1.07.28l8.763 8.763zm1.602 1.123l3.856 2.245c.96.56.96 1.48 0 2.04l-3.856 2.245-2.29-2.265 2.29-2.265z"/>
+                    </svg>
+                    <span data-ar="تحميل من Google Play ↗" data-en="Get on Google Play ↗">تحميل من Google Play ↗</span>
+                </a>
             </div>
 
+            <!-- 3. دليل طنبدي -->
             <div class="app-item-card">
                 <div>
-                    <span class="app-badge">Services / Guide</span>
-                    <h4>دليل طنبدي (Tanbadi Directory)</h4>
-                    <p data-ar="دليل خدمي شامل لتسهيل الوصول للأنشطة والخدمات والأرقام الهامة بسرعة وسلاسة." data-en="A local service and community directory facilitating quick access to vital contacts and services.">دليل خدمي شامل لتسهيل الوصول للأنشطة والخدمات والأرقام الهامة بسرعة وسلاسة.</p>
+                    <div class="app-header">
+                        <img src="icon-tanbadi.png" alt="Tanbadi Directory" class="app-icon" onerror="this.src='https://ui-avatars.com/api/?name=دليل+طنبدي&background=d97706&color=fff&size=120&rounded=true'">
+                        <div class="app-title-group">
+                            <h4 data-ar="دليل طنبدي (Tanbadi Directory)" data-en="Tanbadi Directory (دليل طنبدي)">دليل طنبدي (Tanbadi Directory)</h4>
+                            <span class="app-badge" data-ar="خدمات / دليل محلي" data-en="Services / Guide">خدمات / دليل محلي</span>
+                        </div>
+                    </div>
+                    <p class="app-desc" data-ar="دليل خدمي شامل لتسهيل الوصول للأنشطة والخدمات والأرقام الهامة بسرعة وسلاسة لأهالي القرية." data-en="Comprehensive community service guide facilitating quick access to vital local contacts, businesses, and resources.">
+                        دليل خدمي شامل لتسهيل الوصول للأنشطة والخدمات والأرقام الهامة بسرعة وسلاسة لأهالي القرية.
+                    </p>
                 </div>
-                <a href="https://play.google.com/store/apps/details?id=com.aistudio.tanbadidirectory.wbqzj" target="_blank" class="app-btn" data-ar="تحميل التطبيق ↗" data-en="Get on Google Play ↗">تحميل التطبيق ↗</a>
+                <a href="https://play.google.com/store/apps/details?id=com.aistudio.tanbadidirectory.wbqzj" target="_blank" class="app-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3.609 1.814L13.792 12 3.61 22.186a2.41 2.41 0 0 1-.61-.926V2.74c.15-.36.368-.68.609-.926zm11.306 11.309L6.152 21.886c.32.18.69.28 1.07.28.48 0 .93-.16 1.3-.44l9.043-5.263-2.65-3.34zm0-2.246l2.65-3.34-9.043-5.263c-.37-.28-.82-.44-1.3-.44-.38 0-.75.1-1.07.28l8.763 8.763zm1.602 1.123l3.856 2.245c.96.56.96 1.48 0 2.04l-3.856 2.245-2.29-2.265 2.29-2.265z"/>
+                    </svg>
+                    <span data-ar="تحميل من Google Play ↗" data-en="Get on Google Play ↗">تحميل من Google Play ↗</span>
+                </a>
             </div>
+
+            <!-- 4. Can You Survive Mobile -->
+            <div class="app-item-card">
+                <div>
+                    <div class="app-header">
+                        <img src="icon-survival.png" alt="Can You Survive" class="app-icon" onerror="this.src='https://ui-avatars.com/api/?name=Survive&background=dc2626&color=fff&size=120&rounded=true'">
+                        <div class="app-title-group">
+                            <h4 data-ar="Can You Survive Mobile" data-en="Can You Survive Mobile">Can You Survive Mobile</h4>
+                            <span class="app-badge" data-ar="ألعاب / بقاء" data-en="Game / Survival">ألعاب / بقاء</span>
+                        </div>
+                    </div>
+                    <p class="app-desc" data-ar="لعبة تحدي البقاء الحماسية صممت لتقديم تجربة مشوقة وتفاعلية تتطلب قرارات ذكية على أجهزة الأندرويد." data-en="An intense interactive survival challenge designed for Android, testing your critical decision-making under pressure.">
+                        لعبة تحدي البقاء الحماسية صممت لتقديم تجربة مشوقة وتفاعلية تتطلب قرارات ذكية على أجهزة الأندرويد.
+                    </p>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.app.canyousurvivemobile" target="_blank" class="app-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3.609 1.814L13.792 12 3.61 22.186a2.41 2.41 0 0 1-.61-.926V2.74c.15-.36.368-.68.609-.926zm11.306 11.309L6.152 21.886c.32.18.69.28 1.07.28.48 0 .93-.16 1.3-.44l9.043-5.263-2.65-3.34zm0-2.246l2.65-3.34-9.043-5.263c-.37-.28-.82-.44-1.3-.44-.38 0-.75.1-1.07.28l8.763 8.763zm1.602 1.123l3.856 2.245c.96.56.96 1.48 0 2.04l-3.856 2.245-2.29-2.265 2.29-2.265z"/>
+                    </svg>
+                    <span data-ar="تحميل من Google Play ↗" data-en="Get on Google Play ↗">تحميل من Google Play ↗</span>
+                </a>
+            </div>
+
         </div>
 
         <div class="section-bar">
